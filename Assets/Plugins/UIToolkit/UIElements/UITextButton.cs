@@ -3,11 +3,11 @@ using System.Collections;
 using System;
 
 // Simple extension to UIButton, which uses the native font to render text on top of button
-public class TextButton : UIButton {
+public class UITextButton : UIButton {
 	
-	TextButtonComponent textButtonComponent;
+	UITextButtonComponent textButtonComponent;
 	
-	public static TextButton create(UIToolkit manager, string filename, string highlightedFilename, int xPos, int yPos, int depth){
+	public static UITextButton create(UIToolkit manager, string filename, string highlightedFilename, int xPos, int yPos, int depth){
 		if (manager == null){
 			manager = UIToolkit.instance;
 		}
@@ -19,11 +19,11 @@ public class TextButton : UIButton {
 		// get the highlighted state
 		var highlightedTI = manager.textureInfoForFilename( highlightedFilename );
 			
-		return new TextButton( manager, frame, depth, normalTI.uvRect, highlightedTI.uvRect );
+		return new UITextButton( manager, frame, depth, normalTI.uvRect, highlightedTI.uvRect );
 	}
 	
-	public TextButton( UIToolkit manager, Rect frame, int depth, UIUVRect uvFrame, UIUVRect highlightedUVframe):base(manager, frame, depth, uvFrame, highlightedUVframe){
-		textButtonComponent = client.AddComponent<TextButtonComponent>();
+	public UITextButton( UIToolkit manager, Rect frame, int depth, UIUVRect uvFrame, UIUVRect highlightedUVframe):base(manager, frame, depth, uvFrame, highlightedUVframe){
+		textButtonComponent = client.AddComponent<UITextButtonComponent>();
 		textButtonComponent.textButton = this;
 	}
 	

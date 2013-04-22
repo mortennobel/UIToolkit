@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 // Should only be used indirectly through TextButton
-public class TextButtonComponent : MonoBehaviour {
-	public TextButton textButton;
+public class UITextButtonComponent : MonoBehaviour {
+	public UITextButton textButton;
 	
 	void OnGUI(){
 		if (textButton.GuiStyle == null){
